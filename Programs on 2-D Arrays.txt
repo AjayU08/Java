@@ -1,0 +1,698 @@
+1.Program to find length of row and column.
+public class LengthOfArray {
+	public static void main(String[] args) 
+	{
+		int mat[][];
+		mat=new int[][] {{1,3},{4,5,6,7},{2,4,5}};
+		System.out.println(mat);
+		System.out.println(mat[1]);
+		System.out.println("number of rows "+mat.length);
+		System.out.println("number of first row "+mat[0].length);
+		System.out.println("number of first row "+mat[mat.length-1].length);
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+}
+output:
+[[I@15db9742
+[I@6d06d69c
+number of rows 3
+number of first row 2
+number of first row 3
+1 3 
+4 5 6 7 
+2 4 5 
+
+2.
+import java.util.Scanner;
+public class ArrTwoDiTakeInput 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the number of rows");
+		int c=s.nextInt();
+		System.out.println("Enter the number of columns");
+		int r=s.nextInt();
+		int mat[][]=new int[r][c];
+		System.out.println("Enter the input");
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				mat[i][j]=s.nextInt();
+			}
+		}
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+		
+	}
+}
+output:
+Enter the number of rows
+2
+Enter the number of columns
+3
+Enter the input
+2 3 4 5 6 7 8 9 1
+2 3 
+4 5 
+6 7 
+
+3.Add 2D array
+
+public class AddTwoMatrics {
+	public static void main(String[] args) 
+	{
+		int[][] a= {{1,2,3},{4,5,6}};
+		int[][] b= {{1,2,3},{4,5,6}};
+		int c[][]=new int[a.length][a[0].length];
+		for (int i = 0; i < a.length; i++) 
+		{
+			for (int j = 0; j < a[i].length; j++) 
+			{
+				c[i][j]=a[i][j]+b[i][j];
+			}
+		}
+		for (int i = 0; i < c.length; i++) 
+		{
+			for (int j = 0; j < c[0].length; j++) 
+			{
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+}
+output:
+2 4 6 
+8 10 12 
+
+4.Add 2D array by taking input
+import java.util.Scanner;
+
+public class AddTwoMatrics {
+	public static void main(String[] args) 
+	{
+		System.out.println("enter 1 matrics");
+		int a[][]=readmat();
+		System.out.println("enter 2 matrics");
+		int b[][]=readmat();
+		int c[][]=addarr(a,b);
+		disp(c);
+	}
+	static int[][] addarr(int[][] a,int[][] b)
+	{
+		int c[][]=new int[a.length][a[0].length];
+		for (int i = 0; i < a.length; i++) 
+		{
+			for (int j = 0; j < a[i].length; j++) 
+			{
+				c[i][j]=a[i][j]+b[i][j];
+			}
+		}
+		return c;
+	}
+	static void disp(int c[][]) 
+	{
+		for (int i = 0; i < c.length; i++) 
+		{
+			for (int j = 0; j < c[0].length; j++) 
+			{
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	static int[][] readmat() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the rows and columns");
+		int r = s.nextInt();
+		int c = s.nextInt();
+		int mat[][] = new int[r][c];
+		for (int i = 0; i < mat.length; i++) {
+			for (int j = 0; j < mat[i].length; j++) {
+				mat[i][j] = s.nextInt();
+			}
+		}
+		return mat;
+	}
+
+}
+output:
+enter 1 matrics
+Enter the rows and columns
+2 3
+1 2 3 4 5 6 
+enter 2 matrics
+Enter the rows and columns
+2 3 
+6 5 4 3 2 1 
+7 7 7 
+7 7 7 
+
+5.Find biggest element in the array
+import java.util.Scanner;
+public class Biggestelement {
+	public static void main(String[] args) 
+	{
+		System.out.println("Enter the matrix element");
+		int a[][]=readmat();
+		int big = biggestmat(a);
+		System.out.println("biggest element"+big);
+	}
+	static int[][] readmat() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the rows and columns");
+		int r = s.nextInt();
+		int c = s.nextInt();
+		int mat[][] = new int[r][c];
+		for (int i = 0; i < mat.length; i++) {
+			for (int j = 0; j < mat[i].length; j++) {
+				mat[i][j] = s.nextInt();
+			}
+		}
+		return mat;
+	}
+	static int biggestmat(int[][] mat) 
+	{
+		int big=mat[0][0];
+		for (int i = 0; i < mat.length; i++) {
+			for (int j = 0; j < mat[i].length; j++) {
+				if(mat[i][j]>big) {
+					big=mat[i][j];
+				}
+			}
+			
+		}
+		return big;
+	}
+}
+output:
+Enter the matrix element
+Enter the rows and columns
+2 3
+3 9 6 4 7 6 
+biggest element9
+
+6.Reverse the matics row wise
+public class revrow {
+	public static void main(String[] args) 
+	{
+		int a[][]= {{2,3,4},{4,5,6}};
+		int b[][]=rev(a);
+		dispmat(b);
+	}
+	static void dispmat(int mat[][]) 
+	{
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	static int[][] rev(int[][] x)
+	{
+		for (int i = 0; i < x.length; i++) 
+		{
+			for (int j = 0; j < x[i].length/2; j++) 
+			{
+				int t=x[i][j];
+				x[i][j]=x[i][x[i].length-1-j];
+				x[i][x[i].length-1-j]=t;
+			}
+		}
+		return x;
+	}
+}
+output:
+4 3 2 
+6 5 4 
+
+7.Transpose matics:
+
+public class trans {
+	public static void main(String[] args) 
+	{
+		int a[][]= {{2,3,4},{4,5,6}};
+		dispmat(a);
+		int b[][]=trans(a);
+		dispmat(b);
+	}
+	static void dispmat(int mat[][]) 
+	{
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	static int[][] trans(int x[][]){
+		int t[][]=new int[x[0].length][x.length];
+		for (int i = 0; i < x.length; i++) {
+			for (int j = 0; j < x[i].length; j++) {
+				t[j][i]=x[i][j];
+			}
+		}
+		return t;
+	}
+}
+output:
+2 3 4
+4 5 6
+
+2 4
+3 5
+4 6
+
+8.90' rightshift
+public class revrow {
+	public static void main(String[] args) 
+	{
+		int a[][]= {{2,3,7},{6,9,4},{5,8,1}};
+		dispmat(a);
+		int b[][]=trans(a);
+		int c[][]=rev(b);
+		dispmat(c);
+	}
+	static void dispmat(int mat[][]) 
+	{
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	static int[][] trans(int x[][]){
+		int t[][]=new int[x[0].length][x.length];
+		for (int i = 0; i < x.length; i++) {
+			for (int j = 0; j < x[i].length; j++) {
+				t[j][i]=x[i][j];
+			}
+		}
+		return t;
+	}
+	static int[][] rev(int[][] x)
+	{
+		for (int i = 0; i < x.length; i++) 
+		{
+			for (int j = 0; j < x[i].length/2; j++) 
+			{
+				int t=x[i][j];
+				x[i][j]=x[i][x[i].length-1-j];
+				x[i][x[i].length-1-j]=t;
+			}
+		}
+		return x;
+	}
+}
+output:
+2 3 7 
+6 9 4 
+5 8 1 
+
+5 6 2 
+8 9 3 
+1 4 7 
+
+10.90'left shift
+
+public class revrow {
+	public static void main(String[] args) 
+	{
+		int a[][]= {{2,3,7},{6,9,4},{5,8,1}};
+		dispmat(a);
+		System.out.println();
+		int b[][]=trans(a);
+		dispmat(b);
+		System.out.println();
+		int c[][]=rev(b);
+		dispmat(c);
+	}
+	static void dispmat(int mat[][]) 
+	{
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	static int[][] trans(int x[][]){
+		int t[][]=new int[x[0].length][x.length];
+		for (int i = 0; i < x.length; i++) {
+			for (int j = 0; j < x[i].length; j++) {
+				t[j][i]=x[i][j];
+			}
+		}
+		return t;
+	}
+	static int[][] rev(int[][] x)
+	{
+		for (int i = 0; i < x.length/2; i++) 
+		{
+			for (int j = 0; j < x[i].length; j++) 
+			{
+				int t=x[i][j];
+				x[i][j]=x[x.length-1-i][j];
+				x[x.length-1-i][j]=t;
+			}
+		}
+		return x;
+	}
+}
+output:
+2 3 7 
+6 9 4 
+5 8 1 
+
+2 6 5 
+3 9 8 
+7 4 1 
+
+7 4 1 
+3 9 8 
+2 6 5 
+
+11.column wise reverse
+
+public class revrow {
+	public static void main(String[] args) 
+	{
+		int a[][]= {{2,3,7},{6,9,4},{5,8,1}};
+		dispmat(a);
+		System.out.println();
+		int c[][]=rev(a);
+		dispmat(c);
+	}
+	static void dispmat(int mat[][]) 
+	{
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	static int[][] rev(int[][] x)
+	{
+		for (int i = 0; i < x.length/2; i++) 
+		{
+			for (int j = 0; j < x[i].length; j++) 
+			{
+				int t=x[i][j];
+				x[i][j]=x[x.length-1-i][j];
+				x[x.length-1-i][j]=t;
+			}
+		}
+		return x;
+	}
+}
+output:
+2 3 7 
+6 9 4 
+5 8 1 
+
+5 8 1 
+6 9 4 
+2 3 7 
+
+//Swap diagonal elements in the matrics
+
+public class SwapDiagonal {
+	public static void main(String[] args) 
+	{
+		int a[][]= {{2,3,7},{6,9,4},{5,8,1}};
+		dispmat(a);
+		System.out.println();
+		int c[][]=rev(a);
+		dispmat(c);
+	}
+	static void dispmat(int mat[][]) 
+	{
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	static int[][] rev(int[][] a)
+	{
+		for (int i = 0; i < a.length/2; i++) 
+		{
+			for (int j = 0; j < a[i].length; j++) 
+			{
+				if(i==j)
+				{
+					int t=a[i][j];
+					a[i][j]=a[a.length-1-i][a.length-1-j];
+					a[a.length-1-i][a.length-1-j]=t;
+					
+				}
+				if(i+j==a.length-1)
+				{
+					int t=a[i][j];
+					a[i][j]=a[j][i];
+					a[j][i]=t;
+				}
+			}
+		}
+		return a;
+	}
+}
+output:
+2 3 7 
+6 9 4 
+5 8 1 
+
+1 3 5 
+6 9 4 
+7 8 2 
+
+
+//Row wise sum of the array
+
+public class RowWiseSum {
+	public static void main(String[] args) 
+	{
+		int a[][]= {{2,3,7},{6,9,4},{5,8,1}};
+		dispmat(a);
+		System.out.println();
+		int c[]=rev(a);
+		for (int i = 0; i < c.length; i++) {
+			System.out.println(i+1+" row sum "+c[i]);
+		}
+	}
+	static void dispmat(int mat[][]) 
+	{
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	static int[] rev(int[][] a)
+	{
+		int[] sum=new int[a.length];
+		for (int i = 0; i < a.length; i++) 
+		{
+			for (int j = 0; j < a[i].length; j++) 
+			{
+				sum[i]=sum[i]+a[i][j];
+			}
+		}
+		return sum;
+	}
+}
+output:
+2 3 7 
+6 9 4 
+5 8 1 
+
+1 row sum 12
+2 row sum 19
+3 row sum 14
+
+//column wise sum of the matics
+
+public class ColumnWiseSum {
+	public static void main(String[] args) 
+	{
+		int a[][]= {{2,3,7},{6,9,4},{5,8,1}};
+		dispmat(a);
+		System.out.println();
+		int c[]=rev(a);
+		for (int i = 0; i < c.length; i++) {
+			System.out.println(i+1+" column sum "+c[i]);
+		}
+	}
+	static void dispmat(int mat[][]) 
+	{
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	static int[] rev(int[][] a)
+	{
+		int[] sum=new int[a.length];
+		for (int i = 0; i < a[0].length; i++) 
+		{
+			for (int j = 0; j < a.length; j++) 
+			{
+				sum[i]=sum[i]+a[j][i];
+			}
+		}
+		return sum;
+	}
+}
+output:
+2 3 7 
+6 9 4 
+5 8 1 
+
+1 column sum 13
+2 column sum 20
+3 column sum 12
+
+//row wise biggest element
+
+public class rowWiseBig {
+	public static void main(String[] args) 
+	{
+		int a[][]= {{2,3,7},{6,9,4},{5,8,1}};
+		dispmat(a);
+		System.out.println();
+		int c[]=rev(a);
+		for (int i = 0; i < c.length; i++) {
+			System.out.println(i+1+" row big "+c[i]);
+		}
+	}
+	static void dispmat(int mat[][]) 
+	{
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	static int[] rev(int[][] a)
+	{
+		int[] big=new int[a.length];
+		for (int i = 0; i < a.length; i++) 
+		{
+			big[i]=a[i][0];
+			for (int j = 0; j < a[i].length; j++) 
+			{
+				if(big[i]<a[i][j])
+				{
+					big[i]=a[i][j];
+				}
+			}
+		}
+		return big;
+	}
+}
+2 3 7 
+6 9 4 
+5 8 1 
+
+1 row sum 7
+2 row sum 9
+3 row sum 8
+
+//column wise biggest element
+
+public class columnWiseBig {
+	public static void main(String[] args) 
+	{
+		int a[][]= {{2,3,7},{6,9,4},{5,8,1}};
+		dispmat(a);
+		System.out.println();
+		int c[]=rev(a);
+		for (int i = 0; i < c.length; i++) {
+			System.out.println(i+1+" column big "+c[i]);
+		}
+	}
+	static void dispmat(int mat[][]) 
+	{
+		for (int i = 0; i < mat.length; i++) 
+		{
+			for (int j = 0; j < mat[i].length; j++) 
+			{
+				System.out.print(mat[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	static int[] rev(int[][] a)
+	{
+		int[] big=new int[a.length];
+		for (int i = 0; i < a[0].length; i++) 
+		{
+			big[i]=a[0][i];
+			for (int j = 0; j < a.length; j++) 
+			{
+				if(big[i]<a[j][i])
+				{
+					big[i]=a[j][i];
+				}
+			}
+		}
+		return big;
+	}
+}
+output:
+2 3 7 
+6 9 4 
+5 8 1 
+
+1 column big 6
+2 column big 9
+3 column big 7
+
+//

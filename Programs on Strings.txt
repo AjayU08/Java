@@ -1,0 +1,682 @@
+1. Program to count number of vowels, consonants,Upper case, Lower case,digits, special characters
+import java.util.Scanner;
+public class Program1 {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string:");
+		String str=s.nextLine();
+		int vc=0,cc=0,uc=0,lc=0,dc=0,sc=0;
+		for (int i = 0; i < str.length(); i++) {
+			char ch=str.charAt(i);
+			if(ch>=65 && ch<=90) {
+				uc++;
+				if(ch=='A'||ch=='O'||ch=='E'||ch=='I'||ch=='U') {
+					vc++;
+				}
+				else {
+					cc++;
+				}
+			}
+			else if(ch>=97 && ch<=122) {
+				lc++;
+				if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u') {
+					vc++;
+				}
+				else {
+					cc++;
+				}
+			}
+			else if(ch>=48 && ch<=57) 
+				dc++;
+			
+			else
+				sc++;
+		
+		}
+		System.out.println("Vowel count"+vc+"\nConsonant count "+cc+"\nUpper case "+uc+"\nLower case count"+lc+"\nDigits count "+dc+"\nSpecial characters count "+sc);
+	}
+}
+output:
+Enter the string:
+Ajay4665@gmail.comA
+Vowel count6
+Consonant count 7
+Upper case 2
+Lower case count11
+Digits count 4
+Special characters count 2
+
+2.Sum of digits in the string
+import java.util.Scanner;
+public class Sum {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string:");
+		String str=s.nextLine();
+		int sum=0;
+		for (int i = 0; i < str.length(); i++) {
+			char ch=str.charAt(i);
+			if(ch>=48 && ch<=57) {
+				sum=sum+ch-48;
+			}		
+		}
+		System.out.println(sum);
+	}
+}
+output:
+Enter the string:
+ajay1996
+25
+
+3.Convert upper case letter to lower case letter.
+import java.util.Scanner;
+public class pgm3 {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string:");
+		String str=s.nextLine();
+		String rs="";
+		for (int i = 0; i < str.length(); i++) {
+			char ch=str.charAt(i);
+			if(ch>='A' && ch<='Z') {
+				ch=(char)(ch+32);
+			}
+			rs=rs+ch;
+		}
+		System.out.println(rs);
+	}
+}
+output:
+Enter the string:
+Ajay
+ajay
+
+4.To upper case
+import java.util.Scanner;
+public class pgm4 {
+	static String toUpper(String str) {
+		String rs="";
+		for (int i = 0; i < str.length(); i++) {
+			char ch=str.charAt(i);
+			if(ch>='a' && ch<='z') {
+				ch=(char)(ch-32);
+			}
+			rs=rs+ch;
+		}
+		return rs;
+	}
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string:");
+		String str=s.nextLine();
+	    String ret=toUpper(str);
+	    System.out.println(ret);
+	}
+}
+output:
+Enter the string:
+ajay
+AJAY
+
+5.Count number of occurance of each character in the string
+import java.util.Scanner;
+public class pgm5 {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		String str=s.nextLine();
+		int c[]=new int[128];
+		for (int i = 0; i < str.length(); i++) {
+			char ch=str.charAt(i);
+			c[ch]++;
+		}
+		for (int j = 0; j < c.length; j++) {
+			if(c[j]>0)
+			System.out.println((char)j+"->"+c[j]);
+		}
+	}
+}
+output:
+ajay123
+1->1
+2->1
+3->1
+a->2
+j->1
+y->1
+
+6.Count number of occurance of letters.
+import java.util.Scanner;
+public class PGM6 {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		String str=s.nextLine();
+		int c[]=new int[26];
+		for (int i = 0; i < str.length(); i++) {
+			char ch=str.charAt(i);
+			if(ch>='A' && ch<='Z')
+			    c[ch-65]++;
+			else if(ch>='a' && ch<='z')
+				c[ch-97]++;
+		}
+		for (int j = 0; j < c.length; j++) {
+			if(c[j]>0)
+			System.out.println((char)(j+65)+"->"+c[j]);
+		}
+	}
+}
+output:
+ajayuysu
+A->2
+J->1
+S->1
+U->2
+Y->2
+
+7.String is anagram or not(both str1 & str2 must have same character)
+import java.util.Scanner;
+
+public class Anagram {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the String1:");
+		String str1 = s.nextLine();
+		int[] c = new int[26];
+		int ccc = str1.length();
+		boolean b = true;
+		System.out.println("Enter the String2:");
+		String str2 = s.nextLine();
+		int[] cc = new int[26];
+		for (int i = 0; i < str1.length(); i++) {
+			char ch = str1.charAt(i);
+			if (ch >= 'A' && ch <= 'Z') {
+				c[ch - 65]++;
+			} else if (ch >= 'a' && ch <= 'z') {
+				c[ch - 97]++;
+			}
+		}
+		for (int i = 0; i < str2.length(); i++) {
+			char ch = str2.charAt(i);
+			if (ch >= 'A' && ch <= 'Z') {
+				cc[ch - 65]++;
+			} else if (ch >= 'a' && ch <= 'z') {
+				cc[ch - 97]++;
+			}
+		}
+		for (int i = 0; i < 26; i++) {
+			if (c[i] != cc[i]) {
+				b = false;
+				break;
+			}
+		}
+		if (b == true) {
+			System.out.println("String is Anagram");
+		} else {
+			System.out.println("String is not Anagram");
+		}
+
+	}
+}
+output:
+*
+Enter the String1:
+ajay kumar
+Enter the String2:
+kumar ajay
+String is Anagram
+*
+Enter the String1:
+ajay
+Enter the String2:
+ajaykumar
+String is not Anagram
+
+8.To check the entered string is panagram or not(must contain all the alphabet letters)
+import java.util.Scanner;
+
+public class Panagram {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string:");
+		String str=s.nextLine();
+		int c[]=new int[26];
+		boolean b=true;
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			if (ch >= 'A' && ch <= 'Z') {
+				c[ch - 65]++;
+			} 
+			else if (ch >= 'a' && ch <= 'z') {
+				c[ch - 97]++;
+			}
+		}
+		for (int j = 0; j < c.length; j++) {
+			if(c[j]==0) {
+				b=false;
+				break;
+			}
+		}
+		if(b) {
+			System.out.println("String is Panagram");
+		}
+		else {
+			System.out.println("String is not Panagram");
+		}
+	}
+}
+output
+*
+Enter the string:
+qwertyuiopasdfghjklzxcvbnm
+String is Panagram
+*
+Enter the string:
+asdfghjkl
+String is not Panagram
+
+//Reverse the word in the string
+
+import java.util.Scanner;
+public class ReverseWord 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string");
+		String str=s.nextLine();
+		String rev="";
+		char ch[]=str.toCharArray();
+		for (int i = 0; i < ch.length; i++) 
+		{
+			int k=i;
+			while(i<ch.length && ch[i]!=' ')
+			{
+				i++;
+			}
+			int j=i-1;
+			while(k<=j) 
+			{
+				rev=rev+ch[j];
+				j--;
+			}
+			rev=rev+' ';
+		}
+		System.out.println(rev);
+	}
+}
+output:
+Enter the string
+my name is ajay
+ym eman si yaja 
+
+
+//Count number of words in the string.
+import java.util.Scanner;
+public class CountWordsSentance {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string");
+		String str =s.nextLine();
+		int count=0;
+		char ch[]=str.toCharArray();
+		for (int i = 0; i < ch.length; i++) {
+			if((i==0 &&ch[i]!=' ')||(ch[i]!=' ' && ch[i-1]==' ' )) {
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+}
+output:
+Enter the string
+ ajay is a good boy 
+5
+
+//Convert every starting letter in a word in a sentence to upper case letter and other letters to lower case.
+import java.util.Scanner;
+public class cpsm {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string");
+		String str =s.nextLine();
+		int count=0;
+		char ch[]=str.toCharArray();
+		for (int i = 0; i < ch.length; i++) {
+			if((i==0 &&ch[i]!=' ')||(ch[i]!=' ' && ch[i-1]==' ' )) {
+				if(ch[i]>=97 && ch[i]<=122) {
+					ch[i]=(char)(ch[i]-32);
+				}
+			}
+			else
+				if(ch[i]>=65 && ch[i]<=90) {
+					ch[i]=(char)(ch[i]+32);
+				}
+		}
+		System.out.println(ch);
+	}
+}
+output:
+Enter the string
+AJAY Is gOOD BoY
+Ajay Is Good Boy
+
+//Swap the every word first character with the last character in the string
+ import java.util.Scanner;
+
+public class SentanceFirstCharLastChar {
+	static String sent(String str)
+	{
+		char[] ch=str.toCharArray();
+		String ree="";
+		for (int i = 0; i < ch.length; i++) {
+			int k=i;
+			while(i<ch.length && ch[i]!=' ')
+			{
+				i++;
+			}
+			char a=ch[k];
+			ch[k]=ch[i-1];
+			ch[i-1]=a;	
+		}
+		return 	new String(ch);
+	}
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the String");
+		String str=s.nextLine();
+		System.out.print(sent(str));
+	}
+}
+output:
+Enter the String
+ajay kumar
+yjaa rumak
+
+//Count the characters present in each word of the given string.
+import java.util.Scanner;
+
+public class numOfOcc {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the string");
+		String s = sc.nextLine();
+		String rev = " ";
+		int nc = 0;
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == ' ')
+
+			{
+				rev = rev + nc;
+				nc = 0;
+			} else {
+				nc++;
+				rev = rev + s.charAt(i);
+			}
+		}
+		rev = rev + nc;
+		System.out.println(" count:" + rev);
+	}
+}
+output:
+enter the string
+ajay kumar
+ count: ajay4kumar5
+
+//Check whether string2 is present in string1.
+import java.util.Scanner;
+public class CkeckSubString {
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string1");
+		String s1=s.nextLine();
+		System.out.println("Enter the String2");
+		String s2=s.nextLine();
+		boolean rs=issub(s1,s2);
+		if(rs)
+			System.out.println("yes");
+		else
+			System.out.println("no");
+	}
+	static boolean issub(String s1,String s2)
+	{
+		char c1[]=s1.toCharArray();
+		char c2[]=s2.toCharArray();
+		for (int i = 0; i < c1.length; i++) 
+		{
+			int j=0,k=i;
+			while(j<c2.length && k<c1.length && c1[k]==c2[j])
+			{
+				j++;
+				k++;
+			}
+			if(j==c2.length)
+				return true;
+		}
+		return false;
+	}
+}
+output:
+Enter the string1
+My name is ajaykumar
+Enter the String2
+is
+yes
+
+//Check whether string2 word is present in string1 as word
+import java.util.Scanner;
+
+public class presentword {
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string1");
+		String s1=s.nextLine();
+		System.out.println("Enter the String2");
+		String s2=s.nextLine();
+		boolean rs=issub(s1,s2);
+		if(rs)
+			System.out.println("yes");
+		else
+			System.out.println("no");
+	}
+	static boolean issub(String s1,String s2)
+	{
+		char c1[]=s1.toCharArray();
+		char c2[]=s2.toCharArray();
+		for (int i = 0; i < c1.length; i++) 
+		{
+			int j=0,k=i;
+			while(j<c2.length && k<c1.length && c1[k]==c2[j])
+			{
+				j++;
+				k++;
+			}
+			if(j==c2.length)
+				if((i==0||c1[i-1]==' ')&&(k==c1.length||c1[k]==' '))
+				{
+					return true;
+				}
+		}
+		return false;
+	}
+}
+output:
+Enter the string1
+ajay kumar
+Enter the String2
+ajay
+yes
+
+Enter the string1
+ajay kumar
+Enter the String2
+ay
+no
+
+//check number of days between two dates and name of the day
+
+public class Date 
+{
+	int date;
+	int mm;
+	int yy;
+	int month[]= {0,31,28,31,30,31,30,31,31,30,31,30,31};
+	String day[]= {"sun","mon","tue","wed","thu","fri","sat"};
+	public Date(int d,int mm,int yy)
+	{
+		this.mm=mm;
+		this.date=d;
+		this.yy=yy;
+		if(yy%400==0||yy%4==0&&yy%100!=0)
+			month[2]=29;
+	}
+	public int NumDays()
+	{
+		int y=yy-1;
+		int days=0;
+		days=days+(y*365)+date;
+		days=days+(y/400+y/4-y/100);
+		for (int i = 1; i < mm; i++) 
+		{
+			days=days+month[i];
+		}
+		return days;
+	}
+	String dayname()
+	{
+		return day[NumDays()%7];
+	}
+}
+
+public class NumDays {
+public static void main(String[] args) {
+	Date d1=new Date(6,8,2019);
+	Date d2=new Date(7,8,2019);
+	int x=d1.NumDays();
+	int y=d2.NumDays();
+	System.out.println(y-x);
+}
+}
+output:
+1
+
+public class dayname {
+public static void main(String[] args) {
+	Date d=new Date(7,8,2019);
+	System.out.println(d.dayname());
+}
+}
+output:
+wed
+
+//Count number of times the word has occured
+import java.util.Scanner;
+
+public class countwordse {
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the string1");
+		String s1=s.nextLine();
+		System.out.println("Enter the String2");
+		String s2=s.nextLine();
+		int c=subcount(s1,s2);
+		System.out.println(c);
+	}
+	static int subcount(String s1,String s2)
+	{
+		char c1[]=s1.toCharArray();
+		char c2[]=s2.toCharArray();
+		int c=0;
+		for (int i = 0; i < c1.length; i++) 
+		{
+			int j=0,k=i;
+			while(j<c2.length && k<c1.length && c1[k]==c2[j])
+			{
+				j++;
+				k++;
+			}
+			if(j==c2.length)
+				c++;
+			    i=k-1;
+		}
+		return c;
+	}
+}
+output:
+Enter the string1
+aaaaaa
+Enter the String2
+aa
+3
+
+//
+import java.util.Scanner;
+public class countsubstring {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the string1");
+		String s1 = s.nextLine();
+		System.out.println("Enter the String2");
+		String s2 = s.nextLine();
+		int c = subcount(s1, s2);
+		System.out.println(c);
+	}
+
+	static int subcount(String s1, String s2) {
+		char c1[] = s1.toCharArray();
+		char c2[] = s2.toCharArray();
+		int c = 0;
+		for (int i = 0; i < c1.length; i++) {
+			int j = 0, k = i;
+			while (j < c2.length && k < c1.length && c1[k] == c2[j]) {
+				j++;
+				k++;
+			}
+			if (j == c2.length)
+				c++;
+			i = k - 1;
+		}
+		return c;
+	}
+}
+output:
+Enter the string1
+aaaa
+Enter the String2
+aa
+2
+
+***
+public class String_basic 
+{
+	public static void rec(String str) 
+	{
+		
+		String str1="";
+		int c=0;
+		char ch[]=str.toCharArray();
+		for (int i = 0; i < ch.length; i++) 
+		{
+			if((i<ch.length-2)&&(ch[i]==ch[i+1])) 
+			{
+				i++;
+				c++;
+			}
+			else 
+			{
+				str1=str1+ch[i];
+			}
+		}
+		if(c!=0)
+			rec(str1);
+		else 
+			System.out.println(str1);
+	}
+	public static void main(String[] args) {
+		String str="aaabbbbacccdea";
+		rec(str);
+	}
+}
+
+output:cdea

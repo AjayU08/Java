@@ -1,0 +1,181 @@
+Write a program to Print 1 to N numbers?
+class Printnums { public static void main (String[] args) { java.util.Scanner sc = new java.util.Scanner (System.in); System.out.println ("enter value of n"); int n = sc.nextInt(); for (int i = 1; i<=n ; i++) { System.out.println (i); } } }
+OUTPUT:
+enter value of n: 10 1 2 3 4 5 6 7 8 9 10
+Write a program to Print REVERSE of N to 1 numbers?
+class Printnums { public static void main(String[] args) { java.util.Scanner sc = new java.util.Scanner(System.in); System.out.println ("enter value of n"); int n=sc.nextInt(); for(int i=n ;i>=1;i--) { System.out.print(i); } } }
+OUTPUT:
+enter value of n: 10 10 9 8 7 6 5 4 3 2 1
+ 
+Write a program to display sum of 1 to N numbers?
+class Sumnum { public static void main(String[] args) { java.util.Scanner sc=new java.util.Scanner(System.in); System.out.println("enter value of n"); int n=sc.nextInt(); int sum=0; for(int i=1;i<=n ;i++) { sum+=i; } System.out.println(sum); } }
+OUTPUT:
+enter value of n: 10 55
+Write a program to check given number is EVEN or ODD?
+class EvenOdd { public static void main(String[] args) { java.util.Scanner sc=new java.util.Scanner(System.in); System.out.println("enter the num"); int n=sc.nextInt(); if(n%2==0)
+System.out.println(n+” is even");
+ else System.out.println(n+" is odd"); } }
+OUTPUT:
+enter the num: 20 20 is even F:\Practice>java Even(Command prompt) enter the num: 11 11 is odd
+ 
+Write a program to display PRIME NUMBERS from 1 to n?
+class Prime { public static void main (String [] args) { java.util.Scanner sc=new java.util.Scanner (System.in); System.out.println ("enter number"); int n=sc.nextInt (); System.out.println ("Prime numbers between 1 and " + n); //loop through the numbers one by one for (int i=1; i < n; i++) { boolean isPrime = true; //check to see if the number is prime for (int j=2; j < i ; j++) { if (i % j == 0) { isPrime = false; break; } } // print the number if (isPrime) System.out.print (i + " "); } } }
+OUTPUT:
+enter number 25 Prime numbers between 1 and 25 1 2 3 5 7 11 13 17 19 23
+ 
+Write a program to check whether the given number is PRIME or not?
+class Prime { public static void main(String[] args) { java.util.Scanner sc=new java.util.Scanner(System.in); System.out.println("enter number"); int n=sc.nextInt(); int i; if(n==1) { System.out.println("Prime starts from 2"); } for(i=2;i<n ;i++) { if(n%i==0) System.out.println("not a prime"); break; } if(n==i) System.out.println("prime"); } }
+OUTPUT:
+Enter the number : 17 Prime
+Write a program to find SUM OF PRIME numbers?
+import java.util.Scanner; public class SumofPrime { public static void main(String[] args) { Scanner scn=new Scanner(System.in); System.out.println("Enter the range to print sum of prime Nos....."); int range=scn.nextInt(); int sum=0; for(int i=1;i<=range ;i++) { if(isPrime(i)) sum=sum+i; } System.out.println(sum); }
+ 
+ public static boolean isPrime(int num) { if(num==1) return false; for(int i=2;i<num ;i++) { if(num%i==0) { return false; } } return true; } }
+OUTPUT:
+Enter the range to print sum of prime Nos..... 10 17
+Write a program to display MULTIPLICATION table?
+class Multiplication { public static void main(String[] args) { java.util.Scanner sc=new java.util.Scanner(System.in); System.out.println("enter value of n"); int n=sc.nextInt(); for(int i=1;i<=10;i++) { System.out.println(n+"*"+i+"="+(n*i)); } } }
+Output:
+enter value of n: 2 2*1=2 2*2=4 2*3=6 2*4=8 2*5=10 2*6=12 2*7=14 2*8=16 2*9=18 2*10=20
+Scribd
+Trusted by over 1 million members
+Try Scribd FREE for 30 days to access over 125 million titles without ads or interruptions!
+
+Start Free Trial
+Cancel Anytime.
+
+ 
+ 
+Write a program to display MULTIPLICATION TABLES?
+class Tables { public static void main(String[] args) { java.util.Scanner sc=new java.util.Scanner(System.in); System.out.println("enter value of n"); int n=sc.nextInt(); for(int i=1;i<=n ;i++) { for (int j=1;j<=10 ;j++ ) { System.out.print(j+"*"+i+"="+j*i+"\t"); } } System.out.println(); } }
+OUTPUT:
+enter value of n: 5 1*1=1 2*1=2 3*1=3 4*1=4 5*1=5 1*2=2 2*2=4 3*2=6 4*2=8 5*2=10 1*3=3 2*3=6 3*3=9 4*3=12 5*3=15 1*4=4 2*4=8 3*4=12 4*4=16 5*4=20 1*5=5 2*5=10 3*5=15 4*5=20 5*5=25 1*6=6 2*6=12 3*6=18 4*6=24 5*6=30 1*7=7 2*7=14 3*7=21 4*7=28 5*7=35 1*8=8 2*8=16 3*8=24 4*8=32 5*8=40 1*9=9 2*9=18 3*9=27 4*9=36 5*9=45 1*10=10 2*10=20 3*10=30 4*10=40 5*10=50
+ 
+Write program weather the number is PERFECT NUMBER or not?
+Def:
+Perfect number,
+a positive integer that is equal to the sum of its proper divisors. The smallest perfect number is 6, which is the sum of 1, 2, and 3. import java.util.*; class Perfectnumber { public static void main(String[] args) { Scanner sc=new Scanner(System.in); System.out.println("enter a number"); int num=sc.nextInt(); int sum=1; for (int i=2;i<=num/2;i++ ) { if (num%i==0) sum=sum+i; } if (sum==num) { System.out.println(num+"is a Perfect number"); } else System.out.println(num+" is not a Perfect number"); } }
+OUTPUT:
+enter a number 6 6 is a Perfect number
+
+ 
+Write a program to display RANGE of PERFECT NUMBERS?
+import java.util.*; class Rangeperfectnumber { public static void main(String[] args) { Scanner sc=new Scanner(System.in); System.out.println("enter a number"); int n=sc.nextInt(); for(int num=1;num<=n; num++) { int sum=1; for (int i=2;i<=num/2;i++ ) { if (num%i==0) sum=sum+i; } if (sum==num) { System.out.println(num+"is a Perfect number"); } } } }
+OUTPUT:
+enter a number 100 1is a perfect number 6is a perfect number 28is a perfect number
+ 
+Write a program to check the given number is PALINDROME or not?
+import java.util.*; class Palindrome { public static void main(String[] args) { Scanner sc=new Scanner(System.in); System.out.println("enter a number"); int n =sc.nextInt(); int t=n; int rev=0; while (n!=0) { rev=rev*10+(n%10); n=n/10; } if (rev==t) System.out.println(t+" is a palindrome number"); else System.out.println(t+" is not a palindrome number"); } }
+OUTPUT:
+enter a number 121 121 is a palindrome number enter a number 143 143 is not a palindrome number
+ 
+Write a program to find the FACTORIAL of a given number?
+import java.util.*; class Factorial { public static void main(String[] args) { Scanner scn=new Scanner(System.in); System.out.println("enter the number"); int n=scn.nextInt(); int fact=1; for (int i=1;i<=n ;i++ ) { fact=fact*i; } System.out.println(fact); } }
+OUTPUT:
+Enter the number 5 120
+Write a program to find the FACTORIAL of a given RANGE of numbers?
+import java.util.*; class FactRange { static int fact(int n) { int fact=1; while (n>0) { fact=fact*n; n--; } return fact; } public static void main(String[] args) { Scanner scn=new Scanner(System.in); System.out.println("enter the factorial range number"); int k=scn.nextInt(); for (int i=1;i<=k ;i++) { System.out.println(i+"!---->"+fact(i)); } } }
+Scribd
+Trusted by over 1 million members
+Try Scribd FREE for 30 days to access over 125 million titles without ads or interruptions!
+
+Start Free Trial
+Cancel Anytime.
+
+ 
+OUTPUT:
+enter the factorial range number :7 1!---->1 2!---->2 3!---->6 4!---->24 5!---->120 6!---->720 7!---->5040
+Write program to check the given number is STRONG or not? Def:
+ Strong numbers
+ are the
+numbers
+ whose sum of factorial of digits is equal to the original
+number
+. Example: 145 is a
+strong number
+. import java.util.*; class Strongnumber { static int fact(int n) { int fact=1; while (n>0) { fact= fact*n; n--; } return fact; } public static void main(String[] args) { Scanner sc=new Scanner(System.in); System.out.println("enter a number"); int n =sc.nextInt(); int num=n; int sum=0; int t=num; while (num!=0) { int r=num%10; sum=sum + fact(r); num=num/10; } if (sum==t) System.out.println(t+" is a strong number"); else System.out.println(t+" not a strong number"); } }
+
+ 
+OUTPUT:
+enter a number 143 143not a strong number
+ Write program weather to find range of STRONG NUMBER?
+import java.util.*; class Strongnumber { static int fact(int n) { int fact=1; while (n>0) { fact= fact*n; n--; } return fact; } public static void main(String[] args) { Scanner sc=new Scanner(System.in); System.out.println("enter a Range"); int n =sc.nextInt(); for (int i=1;i<=n ;i++ ) { int num=i; int sum=0; int t=num; while (num!=0) { int r=num%10; sum=sum + fact(r); num=num/10; } if (sum==t) System.out.println(t+ " is a strong number"); } } }
+OUTPUT:
+enter a Range 145 1is a strong number 2is a strong number 145 is a strong number
+
+ 
+Write a program to display FIBONACCI series of a number?
+ 
+Def:
+ a series of numbers in which each number (
+Fibonacci number 
+ ) is the sum of the two preceding numbers. The simplest is the series 1, 1, 2, 3, 5, 8, etc. class Fibonacci { static int fib(int n) { if(n==0) return 0; if(n==1) return 1; return fib(n-1)+fib(n-2); } public static void main(String[] args) { java.util.Scanner sc=new java.util.Scanner(System.in); System.out.println("Enter the number"); int m=sc.nextInt(); int f=fib(m); System.out.println(f); } }
+OUTPUT:
+Enter the number 10 55
+Write a program to display range of FIBONACCI numbers?
+import java.util.Scanner; public class FibonacciSeries1 { public static void main(String[] args) { Scanner scn=new Scanner(System.in); System.out.println("enter the range:........."); int range=scn.nextInt(); int a=0; int b=1; int c=0; System.out.print(a); System.out.print(b); for (int i = 2; i <=range; i++) { c=a + b;
+
+ 
+ if(c<=range) { //c=a + b; System.out.print(c); a=b; b=c; } } } }
+OUTPUT:
+Enter the range….
+ 50 0 1 1 2 3 5 8 13 21 34
+ Write a program to REVERSE the number?
+import java.util.Scanner; class Reversenum { public static void main(String[] args) { Scanner sc=new Scanner(System.in); System.out.println("enter the number"); int num=sc.nextInt(); int t=num; int rev=0; while(num!=0) { rev = rev*10+(num%10); num = num/10; } System.out.println(rev); } }
+OUTPUT:
+enter the number 105 501
+ 
+Write a program to display GCD of two numbers?
+import java.util.Scanner; class Gcd { static int gcd(int m ,int n) { if(m<n) return gcd(n ,m); if(n==0) return m; return gcd(n, m%n); } public static void main(String[] args) { Scanner sc = new Scanner(System.in); System.out.println(" Enter the two numbers"); int p = sc.nextInt(); int q = sc.nextInt(); int a=gcd(p, q); System.out.println(a); } }
+OUTPUT:
+Enter the two numbers 90 120 30
+Write a program to check the given number is PRIME PALINDROME or not?
+import java.util.*; class Palindrome { public static void main(String[] args) { Scanner sc=new Scanner(System.in); System.out.println("enter a number"); int n =sc.nextInt(); int t=n; int rev=0; int i; while (n!=0) { rev=rev*10+(n%10); n=n/10; } if (rev==t)
+Scribd
+Trusted by over 1 million members
+Try Scribd FREE for 30 days to access over 125 million titles without ads or interruptions!
+
+Start Free Trial
+Cancel Anytime.
+
+ 
+{ for( i=2;i<rev ;i++) { if(rev % i==0) { System.out.println("not a prime palindrome"); break; } } if(rev==i) System.out.println(t+ "is a prime palindrome number"); } else System.out.println(t+ "is not a prime palindrome number"); } }
+OUTPUT:
+enter a number 313 313 is a prime palindrome number enter a number 103 103 is not a prime palindrome number
+Write a Program to check the given number is ARMSTRONG or not? Def:
+An Armstrong number is an integer such that the sum of the power of its digits is equal to the number itself. For example, 371 is an Armstrong number since 3**3 + 7**3 + 1**3 = 371. 9 is an Armstrong number since 9*1= 9.
+import java.util.Scanner; public class Armstrong1 { public static void main(String[] args) { Scanner sc=new Scanner(System.in); System.out.println("enter the number"); int n=sc.nextInt(); boolean r=isArmstrong(n); if(r) System.out.println("Given num is Armstrong"); else System.out.println("Given num is not Armstrong");
+ 
+ } static int countDigit(int num) { int count=0; while(num>0) { count++; num=num/10; } return count; } static int pow(int n, int p) { int pw=1; while(p>0) { pw=pw*n; p--; } return pw; } static boolean isAmstrong(int x) { int nd=countDigit(x); int t=x; int sum=0; while(t>0) { int r=t%10; sum=sum+ pow(r ,nd); t=t/10; } if(sum==x) return true; else return false; } }
+OUTPUT:
+enter the number 153 Given num is Armstrong enter the number 1 Given num is Armstrong
+ 
+Write a Program to display the range of ARMSTRONG numbers?
+import java.util.Scanner; public class Armstrong2 { public static void main(String[] args) { Scanner sc=new Scanner(System.in); System.out.println("enter the number"); int n=sc.nextInt(); for (int i=0;i<=n ;i++ ) { boolean r=isAmstrong(i); if(r) System.out.println(i +" is Armstrong"); } } static int countDigit(int num) { int count=0; while(num>0) { count++; num=num/10; } return count; } static int pow(int n ,int p) { int pw=1; while(p>0) { pw=pw*n; p--; } return pw; } static boolean isAmstrong(int x) { int nd=countDigit(x); int t=x; int sum=0;
+ 
+ while(t>0) { int r=t%10; sum=sum +pow(r ,nd); t=t/10; } if(sum==x) return true; else return false; } }
+OUTPUT:
+enter the number: 300 0 is Armstrong 1 is Armstrong 2 is Armstrong 3 is Armstrong 4 is Armstrong 5 is Armstrong 6 is Armstrong 7 is Armstrong 8 is Armstrong 9 is Armstrong 153 is Armstrong
+Write a program to Swap two numbers without using 3
+rd
+ variable?
+class Swap { public static void main(String[] args) { int i=10; int j=20; i=i + j; j=i-j; i=i-j;
+System.out.println(“i=”+i);
+ System.out.println(
+“
+j
+=”+j
+); } }
+OUTPUT:
+i=20 j=10
+ 
+Write a program to Swap two numbers with using 3
+rd
+ variable?
+ class Swapv { public static void main(String[] args) { int i=10; int j=20; int k; k=i; i=j; j=k;
+System.out.println(“i=”+i);
+ 
+System.out.println(“j=”+j);
+ } }
+OUTPUT:
+i=20 j=10

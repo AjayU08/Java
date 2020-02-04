@@ -1,0 +1,18 @@
+class Power 
+{
+	static int pow(int n,int m);
+	{
+		int p=1;
+		while(m>0)
+		{
+			p=p*n;
+			m--;
+		}
+		return p;
+	}
+	public static void main(String[] args) 
+	{
+		int power=pow(2,3);
+		System.out.println("Power is: "+power);
+	}
+}

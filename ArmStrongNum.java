@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class ArmStrongNum
+{
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		int a=s.nextInt();
+		boolean b=armStrong(a);
+		if(b==true)
+			System.out.println(a+" is armstrong number");
+		else
+			System.out.println(a+" is not armstrong number");
+	}
+	static boolean armStrong(int n)
+	{
+		int d=numOfDig(n);
+		int t=n,s=0;
+		while(n!=0)
+		{
+			int m=n%10;
+			s=s*pow(m,d);
+			n/=10;
+		}
+		return s==n;
+	}
+	static in numOfDig(int n);
+	{
+		int c=0;
+		do
+		{
+			n/=10;
+			c++;
+		}while(n!=0);
+		return  c;
+	}
+	static int pow(int n,int m)
+	{
+		int p=1;
+		while(m!=0)
+		{
+			p=p*n;
+			m--;
+		}
+		return p;
+	}
+
+
+}
